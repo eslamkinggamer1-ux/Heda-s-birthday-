@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Happy Birthday Heda ❤️</title>
@@ -17,27 +19,15 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 
-font-family:Poppins,sans-serif;
+background:#070914;
 
-overflow-x:hidden;
-
-background:#0d0d1f;
-
-color:white;
-
-}
-
-/* Background */
-
-.hero{
+overflow:hidden;
 
 height:100vh;
+
+font-family:Poppins,sans-serif;
 
 display:flex;
 
@@ -45,95 +35,128 @@ justify-content:center;
 
 align-items:center;
 
-text-align:center;
+color:white;
 
-position:relative;
+}
+
+/* Background */
+
+.background{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+background:
+radial-gradient(circle at top,#ff6aa8 0%,#12152b 60%,#05060f 100%);
 
 overflow:hidden;
 
-background:
-
-linear-gradient(160deg,#ff5f9e,#ff8fc4,#ffd6ea);
-
 }
 
-/* Floating circles */
+/* Stars */
 
-.circle{
+.star{
 
 position:absolute;
 
+background:white;
+
 border-radius:50%;
 
-background:rgba(255,255,255,.15);
-
-animation:float 10s linear infinite;
+animation:twinkle 2s infinite alternate;
 
 }
 
-.circle:nth-child(1){
+.star:nth-child(1){
 
-width:220px;
-height:220px;
-
-top:-50px;
-left:-70px;
-
-}
-
-.circle:nth-child(2){
-
-width:140px;
-height:140px;
-
-right:5%;
-top:15%;
-
-animation-duration:15s;
+top:10%;
+left:15%;
+width:3px;
+height:3px;
 
 }
 
-.circle:nth-child(3){
+.star:nth-child(2){
 
-width:280px;
-height:280px;
+top:20%;
+right:20%;
+width:2px;
+height:2px;
 
-bottom:-120px;
-right:-100px;
-
-animation-duration:18s;
-
-}
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0px);
+animation-delay:1s;
 
 }
 
-50%{
+.star:nth-child(3){
 
-transform:translateY(-30px);
+bottom:25%;
+left:30%;
+width:4px;
+height:4px;
 
-}
-
-100%{
-
-transform:translateY(0px);
-
-}
+animation-delay:.5s;
 
 }
 
-.content{
+.star:nth-child(4){
+
+bottom:15%;
+right:15%;
+width:3px;
+height:3px;
+
+animation-delay:2s;
+
+}
+
+@keyframes twinkle{
+
+from{
+
+opacity:.2;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1.5);
+
+}
+
+}
+
+/* Center */
+
+.center{
 
 position:relative;
 
-z-index:2;
+z-index:5;
 
-padding:25px;
+text-align:center;
+
+opacity:0;
+
+animation:show 2s forwards;
+
+animation-delay:1s;
+
+}
+
+@keyframes show{
+
+to{
+
+opacity:1;
+
+}
 
 }
 
@@ -141,113 +164,25 @@ h1{
 
 font-family:'Great Vibes',cursive;
 
-font-size:82px;
+font-size:85px;
 
-text-shadow:0 0 25px rgba(255,255,255,.8);
+text-shadow:0 0 25px white;
 
 margin-bottom:20px;
 
-animation:fadeDown 1.8s;
-
 }
 
-h2{
+p{
 
-font-size:34px;
+font-size:24px;
 
-font-weight:600;
+font-weight:300;
 
-margin-bottom:25px;
+letter-spacing:2px;
 
-animation:fadeUp 2s;
+margin-top:10px;
 
-}
-
-.hero p{
-
-font-size:20px;
-
-max-width:700px;
-
-margin:auto;
-
-line-height:1.9;
-
-animation:fadeUp 2.5s;
-
-}
-
-@keyframes fadeDown{
-
-from{
-
-opacity:0;
-
-transform:translateY(-60px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:none;
-
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(60px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:none;
-
-}
-
-}
-
-button{
-
-margin-top:45px;
-
-padding:18px 45px;
-
-border:none;
-
-border-radius:50px;
-
-font-size:20px;
-
-font-weight:bold;
-
-background:white;
-
-color:#ff4f93;
-
-cursor:pointer;
-
-transition:.35s;
-
-box-shadow:0 0 35px rgba(255,255,255,.5);
-
-}
-
-button:hover{
-
-transform:scale(1.08);
-
-box-shadow:0 0 55px white;
+opacity:.9;
 
 }
 
@@ -257,38 +192,22 @@ box-shadow:0 0 55px white;
 
 <body>
 
-<section class="hero">
+<div class="background">
 
-<div class="circle"></div>
+<div class="star"></div>
 
-<div class="circle"></div>
+<div class="star"></div>
 
-<div class="circle"></div>
+<div class="star"></div>
 
-<div class="content">
-
-<h1>Happy Birthday ❤️</h1>
-
-<h2>My Beautiful Wife, Heda</h2>
-
-<p>
-
-Today isn't just another birthday.
-
-Today is the day my favorite person came into this world.
-
-And today...
-
-I have something waiting for you.
-
-</p>
-
-<button id="startButton">
-
-Open My Heart ❤️
-
-</button>
+<div class="star"></div>
 
 </div>
 
-</section>
+<div class="center">
+
+<h1>Happy Birthday ❤️</h1>
+
+<p>For My Beautiful Wife, Heda</p>
+
+</div>
