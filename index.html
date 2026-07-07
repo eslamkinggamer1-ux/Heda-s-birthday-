@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Happy Birthday Heda ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,6 +15,9 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
@@ -24,13 +25,15 @@ body{
 
 font-family:Poppins,sans-serif;
 
-background:linear-gradient(135deg,#ff8fb1,#ffc6d9,#ffe8f3);
+overflow-x:hidden;
+
+background:#0d0d1f;
 
 color:white;
 
-overflow-x:hidden;
-
 }
+
+/* Background */
 
 .hero{
 
@@ -42,31 +45,121 @@ justify-content:center;
 
 align-items:center;
 
-flex-direction:column;
-
 text-align:center;
 
-padding:20px;
+position:relative;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(160deg,#ff5f9e,#ff8fc4,#ffd6ea);
 
 }
 
-.hero h1{
+/* Floating circles */
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.15);
+
+animation:float 10s linear infinite;
+
+}
+
+.circle:nth-child(1){
+
+width:220px;
+height:220px;
+
+top:-50px;
+left:-70px;
+
+}
+
+.circle:nth-child(2){
+
+width:140px;
+height:140px;
+
+right:5%;
+top:15%;
+
+animation-duration:15s;
+
+}
+
+.circle:nth-child(3){
+
+width:280px;
+height:280px;
+
+bottom:-120px;
+right:-100px;
+
+animation-duration:18s;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-30px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+.content{
+
+position:relative;
+
+z-index:2;
+
+padding:25px;
+
+}
+
+h1{
 
 font-family:'Great Vibes',cursive;
 
-font-size:70px;
+font-size:82px;
+
+text-shadow:0 0 25px rgba(255,255,255,.8);
 
 margin-bottom:20px;
 
-text-shadow:0 0 20px white;
+animation:fadeDown 1.8s;
 
 }
 
-.hero h2{
+h2{
 
-font-size:32px;
+font-size:34px;
 
-margin-bottom:20px;
+font-weight:600;
+
+margin-bottom:25px;
+
+animation:fadeUp 2s;
 
 }
 
@@ -76,127 +169,85 @@ font-size:20px;
 
 max-width:700px;
 
-margin-bottom:40px;
+margin:auto;
 
-line-height:1.8;
+line-height:1.9;
+
+animation:fadeUp 2.5s;
+
+}
+
+@keyframes fadeDown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
 
 }
 
 button{
 
-padding:18px 40px;
+margin-top:45px;
 
-font-size:20px;
+padding:18px 45px;
 
 border:none;
 
-border-radius:40px;
+border-radius:50px;
 
-background:Black;
-
-color:#ff4d88;
-
-cursor:pointer;
+font-size:20px;
 
 font-weight:bold;
 
-button{
-    background:linear-gradient(135deg,#ff4d88,#ff7eb3);
-    color:white;
-    border:none;
-    border-radius:50px;
-    padding:18px 45px;
-    font-size:22px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.4s;
-    box-shadow:0 10px 35px rgba(255,77,136,.45);
-    animation:pulse 2s infinite;
+background:white;
+
+color:#ff4f93;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 0 35px rgba(255,255,255,.5);
+
 }
 
 button:hover{
-    transform:translateY(-4px) scale(1.06);
-    box-shadow:0 15px 45px rgba(255,77,136,.7);
-}
 
-@keyframes pulse{
-0%,100%{
-transform:scale(1);
-}
-50%{
-transform:scale(1.05);
-}
-    }
+transform:scale(1.08);
 
-
-button:hover{
-    transform:scale(1.12);
-    box-shadow:0 0 40px rgba(255,77,136,.9);
-}
-
-@keyframes heartbeat{
-    0%{
-        transform:scale(1);
-    }
-    25%{
-        transform:scale(1.08);
-    }
-    50%{
-        transform:scale(1);
-    }
-    75%{
-        transform:scale(1.08);
-    }
-    100%{
-        transform:scale(1);
-    }
-  }
-
-
-
-
-
-
-
-section{
-
-padding:80px 20px;
-
-text-align:center;
-
-}
-
-.card{
-
-background:rgba(255,255,255,.15);
-
-padding:35px;
-
-border-radius:20px;
-
-max-width:850px;
-
-margin:auto;
-
-backdrop-filter:blur(10px);
-
-}
-
-.card h2{
-
-font-family:'Great Vibes',cursive;
-
-font-size:50px;
-
-margin-bottom:25px;
-
-}
-
-.card p{
-
-font-size:21px;
-
-line-height:2;
+box-shadow:0 0 55px white;
 
 }
 
@@ -208,190 +259,36 @@ line-height:2;
 
 <section class="hero">
 
+<div class="circle"></div>
+
+<div class="circle"></div>
+
+<div class="circle"></div>
+
+<div class="content">
+
 <h1>Happy Birthday ❤️</h1>
 
 <h2>My Beautiful Wife, Heda</h2>
 
 <p>
 
-Today isn't just your birthday.
+Today isn't just another birthday.
 
 Today is the day my favorite person came into this world.
 
 And today...
 
-I want to show you just how much you mean to me.
+I have something waiting for you.
 
 </p>
 
-<button onclick="openLetter()">
+<button id="startButton">
 
 Open My Heart ❤️
 
 </button>
 
-
-    
-
-
-
-
-
-
-</section>
-
-<section id="letter">
-
-<div class="card">
-
-<h2>To My Beautiful Wife</h2>
-
-<p>
-Happy Birthday, my beautiful wife, Heda.
-
-Today isn't just another day to me. It's the day the woman who completely changed my life came into this world. Out of all the people I could have met, life somehow brought me to you, and I will always thank God for that.
-
-Before I met you, I never knew another person could become such a huge part of my heart. But now, I can't imagine a future that doesn't have you in it.
-
-Thank you...
-
-Thank you for choosing me.
-
-Thank you for believing in me.
-
-Thank you for understanding me.
-
-Thank you for loving me.
-
-You became my peace when life felt loud.
-
-My comfort when my heart felt heavy.
-
-My safest place.
-
-My home.
-
-Every dream I have somehow has you in it.
-
-Every prayer I make includes your happiness.
-
-Every tomorrow I imagine has you standing beside me.
-
-If someone asked me what love looks like...
-
-I'd simply say...
-
-<b>Heda.</b>
-
-Because loving you has been the most beautiful thing my heart has ever done.
-
-I know life won't always be easy.
-
-There will be difficult days.
-
-There will be challenges.
-
-But there is one thing I know with absolute certainty...
-
-If life gave me a thousand chances to choose again...
-
-I would still choose you.
-
-Every single time.
-
-Without hesitation.
-
-Without doubt.
-
-In every lifetime.
-
-It would always be you.
-
-Happy Birthday, my love.
-
-I hope today makes you smile the way you've made me smile countless times.
-
-I hope every wish you make comes true.
-
-And I hope you never forget how deeply, endlessly, and completely you are loved.
-
-Forever Yours,
-
-❤️ Eslam ❤️
-
-</p>
-
 </div>
 
 </section>
-
-<section>
-
-<h1 style="font-family:'Great Vibes',cursive;font-size:60px;">
-
-❤️ I Love You ❤️
-
-</h1>
-
-<p style="font-size:24px;max-width:800px;margin:auto;line-height:2;">
-
-Thank you for existing.
-
-Thank you for changing my life.
-
-Thank you for being the greatest blessing my heart has ever known.
-
-Happy Birthday, Heda.
-
-Forever and Always.
-
-❤️
-
-</p>
-
-</section>
-<script>
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.innerHTML = "❤️";
-  heart.style.position = "fixed";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.top = "100vh";
-  heart.style.fontSize = (20 + Math.random() * 20) + "px";
-  heart.style.pointerEvents = "none";
-  heart.style.zIndex = "9999";
-  heart.style.transition = "transform 6s linear, opacity 6s";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.style.transform = "translateY(-120vh)";
-    heart.style.opacity = "0";
-  }, 100);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 6200);
-}
-
-setInterval(createHeart, 600);
-    <script>
-function openLetter() {
-
-    document.body.style.transition = "1s";
-    document.body.style.opacity = "0";
-
-    setTimeout(function(){
-
-        document.body.style.opacity = "1";
-
-        document.getElementById("letter").scrollIntoView({
-            behavior: "smooth"
-        });
-
-    },900);
-
-}
-</script>
-</body>
-
-  </html>
