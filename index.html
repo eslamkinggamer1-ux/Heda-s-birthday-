@@ -100,13 +100,36 @@ cursor:pointer;
 
 font-weight:bold;
 
+button{
+padding:18px 40px;
+font-size:20px;
+border:none;
+border-radius:40px;
+background:white;
+color:#ff4d88;
+cursor:pointer;
+font-weight:bold;
+animation:pulse 2s infinite;
+transition:.3s;
+box-shadow:0 0 20px rgba(255,255,255,.7);
 }
 
 button:hover{
-
-transform:scale(1.05);
-
+transform:scale(1.1);
+box-shadow:0 0 35px white;
 }
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+  }
+
+
+
+
+
+
 
 section{
 
