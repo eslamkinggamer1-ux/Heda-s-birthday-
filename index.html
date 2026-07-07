@@ -101,18 +101,33 @@ cursor:pointer;
 font-weight:bold;
 
 button{
-    background:linear-gradient(45deg,#ff4d88,#ff7eb3);
+    background:linear-gradient(135deg,#ff4d88,#ff7eb3);
     color:white;
     border:none;
     border-radius:50px;
-    padding:18px 40px;
-    font-size:20px;
-    font-weight:bold;
+    padding:18px 45px;
+    font-size:22px;
+    font-weight:700;
     cursor:pointer;
-    transition:all .4s ease;
-    box-shadow:0 0 20px rgba(255,77,136,.6);
-    animation:heartbeat 1.5s infinite;
+    transition:.4s;
+    box-shadow:0 10px 35px rgba(255,77,136,.45);
+    animation:pulse 2s infinite;
 }
+
+button:hover{
+    transform:translateY(-4px) scale(1.06);
+    box-shadow:0 15px 45px rgba(255,77,136,.7);
+}
+
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.05);
+}
+    }
+
 
 button:hover{
     transform:scale(1.12);
@@ -209,15 +224,19 @@ I want to show you just how much you mean to me.
 
 </p>
 
-<a href="#letter">
-
-<button>
+<button onclick="openLetter()">
 
 Open My Heart ❤️
 
 </button>
 
-</a>
+
+    
+
+
+
+
+
 
 </section>
 
@@ -355,7 +374,24 @@ function createHeart() {
 }
 
 setInterval(createHeart, 600);
-    </script>
+    <script>
+function openLetter() {
+
+    document.body.style.transition = "1s";
+    document.body.style.opacity = "0";
+
+    setTimeout(function(){
+
+        document.body.style.opacity = "1";
+
+        document.getElementById("letter").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    },900);
+
+}
+</script>
 </body>
 
   </html>
