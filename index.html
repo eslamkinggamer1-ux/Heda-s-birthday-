@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday Heda ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,12 +18,6 @@ box-sizing:border-box;
 
 body{
 
-background:#070814;
-
-font-family:Poppins,sans-serif;
-
-overflow:hidden;
-
 height:100vh;
 
 display:flex;
@@ -35,93 +26,50 @@ justify-content:center;
 
 align-items:center;
 
+overflow:hidden;
+
+font-family:Poppins,sans-serif;
+
+background:
+linear-gradient(180deg,#090816,#241339,#ff5fa2);
+
 color:white;
 
 }
 
-/* Background */
-
 .hero{
-
-width:100%;
-
-height:100%;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
 
 text-align:center;
 
-position:relative;
+padding:30px;
 
-background:
-
-radial-gradient(circle at top,#ff6fa7 0%,#241336 45%,#070814 100%);
-
-}
-
-/* Soft glow */
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-width:700px;
-
-height:700px;
-
-background:rgba(255,120,180,.12);
-
-border-radius:50%;
-
-filter:blur(120px);
-
-}
-
-/* Content */
-
-.content{
-
-position:relative;
-
-z-index:5;
-
-padding:20px;
+animation:fade 2s;
 
 }
 
 h1{
 
-font-family:"Great Vibes",cursive;
+font-family:'Great Vibes',cursive;
 
-font-size:92px;
+font-size:80px;
 
-margin-bottom:20px;
+margin-bottom:15px;
 
-text-shadow:0 0 35px rgba(255,255,255,.9);
+text-shadow:0 0 25px rgba(255,255,255,.9);
 
 }
 
 h2{
 
-font-size:34px;
+font-size:32px;
 
-font-weight:600;
-
-margin-bottom:18px;
+margin-bottom:20px;
 
 }
 
 p{
 
-font-size:22px;
-
-opacity:.9;
+font-size:20px;
 
 max-width:650px;
 
@@ -129,82 +77,65 @@ line-height:1.8;
 
 margin:auto;
 
-}
-/* Animated Stars */
-
-.stars{
-
-position:absolute;
-
-width:100%;
-
-height:100%;
-
-overflow:hidden;
+margin-bottom:40px;
 
 }
 
-.star{
+button{
 
-position:absolute;
+padding:18px 45px;
 
-width:3px;
+font-size:20px;
 
-height:3px;
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
 
 background:white;
 
-border-radius:50%;
+color:#ff4f93;
 
-box-shadow:
-0 0 8px white,
-0 0 18px white;
+font-weight:bold;
 
-animation:twinkle 3s infinite alternate;
+transition:.3s;
 
 }
 
-@keyframes twinkle{
+button:hover{
 
-0%{
-
-opacity:.2;
-
-transform:scale(.8);
+transform:scale(1.08);
 
 }
 
-100%{
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
 
 opacity:1;
 
-transform:scale(1.8);
+transform:none;
 
 }
 
-  }
+}
+
 </style>
 
 </head>
 
 <body>
 
-<section class="hero">
-<div class="stars">
-
-<div class="star" style="top:8%;left:12%;animation-delay:0s;"></div>
-<div class="star" style="top:16%;left:28%;animation-delay:1s;"></div>
-<div class="star" style="top:12%;left:68%;animation-delay:2s;"></div>
-<div class="star" style="top:35%;left:82%;animation-delay:1.5s;"></div>
-<div class="star" style="top:48%;left:18%;animation-delay:.6s;"></div>
-<div class="star" style="top:62%;left:56%;animation-delay:2.4s;"></div>
-<div class="star" style="top:76%;left:74%;animation-delay:.8s;"></div>
-<div class="star" style="top:85%;left:30%;animation-delay:1.7s;"></div>
-<div class="star" style="top:55%;left:92%;animation-delay:2.8s;"></div>
-<div class="star" style="top:24%;left:50%;animation-delay:.3s;"></div>
-
-  </div>
-<div class="content">
+<div class="hero">
 
 <h1>Happy Birthday ❤️</h1>
 
@@ -212,16 +143,21 @@ transform:scale(1.8);
 
 <p>
 
-This isn't just a website...
+Today isn't just your birthday.
 
-It's a small piece of my heart,
-made only for you.
+It's the day the most beautiful person entered this world.
+
+I made something special just for you.
 
 </p>
 
-</div>
+<button>
 
-</section>
+Open My Heart ❤️
+
+</button>
+
+</div>
 
 </body>
 
