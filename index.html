@@ -240,7 +240,7 @@ margin-bottom:40px;
 
 button{
 
-padding:18px 48px;
+padding:16px 40px;
 
 font-size:20px;
 
@@ -250,19 +250,21 @@ border:none;
 
 border-radius:50px;
 
-background:white;
+background:linear-gradient(45deg,#ff4d88,#ff7eb3);
 
-color:#ff4f93;
+color:white;
 
 cursor:pointer;
 
 transition:.3s;
 
-box-shadow:0 0 25px rgba(255,255,255,.4);
+box-shadow:
+0 0 15px #ff4d88,
+0 0 30px rgba(255,77,136,.6);
 
-animation:heartbeat 2s infinite;
+animation:heartbeat 1.5s infinite, glow 2s infinite alternate;
 
-}
+  }
 
 button:hover{
 
@@ -273,7 +275,23 @@ box-shadow:0 0 45px rgba(255,255,255,.9);
 }
 
 @keyframes heartbeat{
+@keyframes glow{
 
+from{
+
+box-shadow:0 0 15px #ff4d88,
+0 0 30px rgba(255,77,136,.5);
+
+}
+
+to{
+
+box-shadow:0 0 30px #ff4d88,
+0 0 60px rgba(255,77,136,.9);
+
+}
+
+  }
 0%,100%{
 
 transform:scale(1);
