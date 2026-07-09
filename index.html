@@ -380,7 +380,21 @@ One More Surprise ❤️
 
 </div>
 
+<div id="reasonCard" style="display:none;max-width:700px;margin:40px auto;padding:30px;border-radius:25px;background:rgba(255,255,255,0.1);text-align:center;">
 
+    <h2 id="reasonNumber">❤️ Reason #1 ❤️</h2>
+
+    <p id="reasonText" style="font-size:22px;line-height:1.8;">
+        Because your smile brightens my darkest days.
+    </p>
+
+    <br>
+
+    <button id="nextReasonBtn">
+        Next Reason ❤️
+    </button>
+
+</div>
 
 <script>
 
@@ -394,14 +408,39 @@ button.addEventListener("click", function(){
 
 });
 
+const reasons = [
+"Because your smile brightens my darkest days.",
+"Because you make me feel loved.",
+"Because you are my favorite person.",
+"Because every moment with you is special.",
+"Because you make distance feel worth it."
+];
+
+let currentReason = 0;
+
 const surpriseButton = document.getElementById("surpriseBtn");
 
-surpriseButton.addEventListener("click", function(){
-
-    alert("The next surprise is coming soon ❤️");
-
+surpriseButton.addEventListener("click", function () {
+    document.getElementById("reasonCard").style.display = "block";
+    document.getElementById("reasonNumber").innerHTML =
+        "❤️ Reason #" + (currentReason + 1) + " ❤️";
+    document.getElementById("reasonText").innerHTML =
+        reasons[currentReason];
+    window.scrollTo(0, document.body.scrollHeight);
 });
 
+document.getElementById("nextReasonBtn").addEventListener("click", function () {
+    currentReason++;
+
+    if (currentReason >= reasons.length) {
+        currentReason = 0;
+    }
+
+    document.getElementById("reasonNumber").innerHTML =
+        "❤️ Reason #" + (currentReason + 1) + " ❤️";
+    document.getElementById("reasonText").innerHTML =
+        reasons[currentReason];
+});
 </script>
 
 </body>
