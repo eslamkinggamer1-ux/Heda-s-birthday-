@@ -384,15 +384,21 @@ One More Surprise ❤️
 
 <script>
 
-const button=document.getElementById("openBtn");
+const button = document.getElementById("openBtn");
 
-button.addEventListener("click",function(){
+button.addEventListener("click", function(){
 
-document.querySelector(".hero").style.display="none";
+    document.querySelector(".hero").style.display = "none";
+    document.getElementById("letter").style.display = "block";
+    window.scrollTo(0,0);
 
-document.getElementById("letter").style.display="block";
+});
 
-window.scrollTo(0,0);
+const surpriseButton = document.getElementById("surpriseBtn");
+
+surpriseButton.addEventListener("click", function(){
+
+    alert("The next surprise is coming soon ❤️");
 
 });
 
