@@ -273,36 +273,30 @@ transform:scale(1.08);
 box-shadow:0 0 45px rgba(255,255,255,.9);
 
 }
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
 
-@keyframes heartbeat{
-@keyframes glow{
-
-from{
-
-box-shadow:0 0 15px #ff4d88,
-0 0 30px rgba(255,77,136,.5);
-
+    50% {
+        transform: scale(1.08);
+    }
 }
 
-to{
+@keyframes glow {
+    from {
+        box-shadow:
+        0 0 15px #ff4d88,
+        0 0 30px rgba(255,77,136,.5);
+    }
 
-box-shadow:0 0 30px #ff4d88,
-0 0 60px rgba(255,77,136,.9);
-
-}
-
+    to {
+        box-shadow:
+        0 0 30px #ff4d88,
+        0 0 60px rgba(255,77,136,.9);
+    }
   }
-0%,100%{
 
-transform:scale(1);
-
-}
-
-50%{
-
-transform:scale(1.08);
-
-}
 #reasonCard{
     background: rgba(255,255,255,0.12);
     backdrop-filter: blur(12px);
