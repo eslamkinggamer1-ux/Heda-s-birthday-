@@ -514,7 +514,41 @@ One More Surprise ❤️
     </button>
 
 </div>
+<section id="finalSurprise" style="text-align:center;padding:80px 20px;">
 
+<h1>One Last Surprise ❤️</h1>
+
+<p style="font-size:22px;margin:25px 0;">
+You made it all the way here...
+</p>
+
+<button id="finalBtn">
+Open ❤️
+</button>
+
+<div id="finalMessage" style="display:none;margin-top:40px;">
+
+<h2>Happy Birthday, My Beautiful Wife, Heda ❤️</h2>
+
+<p style="font-size:22px;line-height:1.8;max-width:800px;margin:auto;">
+
+No matter how many birthdays come and go, I hope one day I'll be there to celebrate them beside you.
+
+Thank you for bringing happiness into my life.
+
+I hope today fills your heart with as much joy as you've brought into mine.
+
+I love you more than words could ever express.
+
+Forever yours,
+
+❤️ Eslam ❤️
+
+</p>
+
+</div>
+
+</section>
 <script>
 
 const button = document.getElementById("openBtn");
@@ -677,6 +711,13 @@ setInterval(function(){
     },11000);
 
 },500);
+  const finalBtn = document.getElementById("finalBtn");
+
+finalBtn.addEventListener("click", function () {
+    document.getElementById("finalMessage").style.display = "block";
+    finalBtn.style.display = "none";
+    window.scrollTo(0, document.body.scrollHeight);
+});
 </script>
 
 </body>
