@@ -638,6 +638,23 @@ setInterval(function(){
     },11000);
 
 },500);
+  .hearts span {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    pointer-events: none;
+    animation: fall 8s linear forwards;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+} 
 </script>
 
 </body>
