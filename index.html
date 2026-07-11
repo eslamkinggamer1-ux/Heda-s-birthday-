@@ -571,6 +571,36 @@ box-shadow:0 0 45px rgba(255,255,255,.9);
     margin: 40px 20px;
     padding: 40px 20px;
   }
+  #secretHeart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 9999;
+    animation: heartbeat 1.5s infinite;
+}
+
+#secretMessage {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: rgba(20,20,40,0.95);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255,105,180,0.6);
+    z-index: 10000;
+}
+
+#secretMessage h2 {
+    margin-bottom: 15px;
+  }
 </style>
 
 </head>
@@ -920,6 +950,23 @@ const quote = document.getElementById("quote");
 if (quote) {
     quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
   }
+  let secretClicks = 0;
+
+const secretHeart = document.getElementById("secretHeart");
+const secretMessage = document.getElementById("secretMessage");
+
+secretHeart.addEventListener("click", function () {
+    secretClicks++;
+
+    if (secretClicks >= 5) {
+        secretMessage.style.display = "block";
+    }
+});
+
+secretMessage.addEventListener("click", function () {
+    secretMessage.style.display = "none";
+    secretClicks = 0;
+});
 </script>
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
@@ -991,5 +1038,19 @@ if (quote) {
         I'll keep loving you with all my heart. ❤️
     </p>
   </section>
+  <div id="secretHeart">❤️</div>
+
+<div id="secretMessage">
+    <h2>You found my secret... ❤️</h2>
+
+    <p>
+        No matter how many words are on this website,
+        they'll never be enough to describe how much I love you.
+
+        Happy Birthday, my beautiful Heda.
+
+        I love you endlessly. ❤️
+    </p>
+</div>
   </body>
 </html>
