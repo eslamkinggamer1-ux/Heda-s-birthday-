@@ -670,12 +670,21 @@ let currentReason = 0;
 const surpriseButton = document.getElementById("surpriseBtn");
 
 surpriseButton.addEventListener("click", function () {
+
+    currentReason = 0;
+
     document.getElementById("reasonCard").style.display = "block";
+
     document.getElementById("reasonNumber").innerHTML =
-        "❤️ Reason #" + (currentReason + 1) + " ❤️";
+        "❤️ Reason #1 ❤️";
+
     document.getElementById("reasonText").innerHTML =
-        reasons[currentReason];
-    window.scrollTo(0, document.body.scrollHeight);
+        reasons[0];
+
+    document.getElementById("reasonCard").scrollIntoView({
+        behavior: "smooth"
+    });
+
 });
 
 document.getElementById("nextReasonBtn").addEventListener("click", function () {
