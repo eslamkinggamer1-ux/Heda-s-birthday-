@@ -886,7 +886,9 @@ revealOnScroll();
 
 const quote = document.getElementById("quote");
 
-quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+if (quote) {
+    quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+  }
 </script>
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
