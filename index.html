@@ -459,6 +459,16 @@ box-shadow:0 0 45px rgba(255,255,255,.9);
     100% {
         transform: scale(1);
     }
+}
+  .hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
 } 
 </style>
 
@@ -776,8 +786,19 @@ finalBtn.addEventListener("click", function () {
     finalBtn.style.display = "none";
   
 });
+  const hiddenElements = document.querySelectorAll(".hidden");
+
+window.addEventListener("scroll", () => {
+    hiddenElements.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 100) {
+            el.classList.add("show");
+        }
+    });
+});
 </script>
-<section class="final-love">
+<section class="final-love hidden">
     <h2>Forever With You ❤️</h2>
 
     <p>
