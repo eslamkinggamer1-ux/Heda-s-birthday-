@@ -788,7 +788,7 @@ finalBtn.addEventListener("click", function () {
 });
   const hiddenElements = document.querySelectorAll(".hidden");
 
-window.addEventListener("scroll", () => {
+function revealOnScroll() {
     hiddenElements.forEach((el) => {
         const top = el.getBoundingClientRect().top;
 
@@ -796,7 +796,11 @@ window.addEventListener("scroll", () => {
             el.classList.add("show");
         }
     });
-});
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
 </script>
 <section class="final-love hidden">
     <h2>Forever With You ❤️</h2>
