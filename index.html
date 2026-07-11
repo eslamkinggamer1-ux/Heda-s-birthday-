@@ -875,6 +875,18 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 
 revealOnScroll();
+  const quotes = [
+    "You are my favorite hello and my hardest goodbye. ❤️",
+    "Every moment with you is my favorite memory.",
+    "You are the best thing that has ever happened to me.",
+    "No distance can change how much I love you.",
+    "Happy Birthday to the most beautiful girl in my world. 🎂❤️",
+    "If I had one wish, I'd spend every birthday with you."
+];
+
+const quote = document.getElementById("quote");
+
+quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
 </script>
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
@@ -931,5 +943,9 @@ revealOnScroll();
 
     <p><strong>Forever and always. ❤️</strong></p>
   </section>
+  <div class="love-quote">
+    <h2>❤️ A Message Just for You</h2>
+    <p id="quote"></p>
+  </div>
 </body>
 </html>
