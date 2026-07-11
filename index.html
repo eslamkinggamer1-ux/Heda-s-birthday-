@@ -424,6 +424,41 @@ box-shadow:0 0 45px rgba(255,255,255,.9);
         opacity:1;
         transform:scale(1.8);
     }
+}
+  .final-love {
+    text-align: center;
+    padding: 80px 20px;
+    margin-top: 50px;
+}
+
+.final-love h2 {
+    font-size: 35px;
+}
+
+.final-love p {
+    font-size: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.big-heart {
+    font-size: 80px;
+    margin-top: 30px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 } 
 </style>
 
@@ -742,6 +777,14 @@ finalBtn.addEventListener("click", function () {
     window.scrollTo(0, document.body.scrollHeight);
 });
 </script>
+<section class="final-love">
+    <h2>Forever With You ❤️</h2>
 
+    <p>
+        No matter what happens, I will always be grateful for every moment with you.
+    </p>
+
+    <div class="big-heart">❤️</div>
+</section>
 </body>
 </html>
