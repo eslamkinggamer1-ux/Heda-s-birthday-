@@ -914,7 +914,8 @@ setInterval(function(){
 
     const heart = document.createElement("span");
 
-    heart.innerHTML = "❤️";
+    const icons = ["❤️","💖","💕","💗","💘","💝","✨","🌸"];
+heart.innerHTML = icons[Math.floor(Math.random() * icons.length)];
 
     heart.style.left = Math.random() * 100 + "%";
 
