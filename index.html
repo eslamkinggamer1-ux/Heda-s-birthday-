@@ -656,8 +656,10 @@ box-shadow:0 0 45px rgba(255,255,255,.9);
     padding:30px;
     border-radius:25px;
     text-align:center;
-    z-index:10001;
+    z-index:999999;
     box-shadow:0 0 35px rgba(255,105,180,.6);
+    overflow-y:auto;
+max-height:90vh;
 }
 
 #promisePopup button{
@@ -1085,12 +1087,13 @@ setInterval(function () {
 }, 1000);
 function showPromise() {
     document.getElementById("promisePopup").style.display = "block";
+    document.getElementById("countdown").style.display = "none";
 }
 
 function closePromise() {
     document.getElementById("promisePopup").style.display = "none";
-}
-
+    document.getElementById("countdown").style.display = "block";
+  }
 </script>
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
@@ -1208,7 +1211,7 @@ Eslam ❤️
     <button onclick="closePromise()">Close ❤️</button>
 </div>
 
-</div>
+    
 
   </section>
   <section class="future">
