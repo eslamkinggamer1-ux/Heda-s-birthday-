@@ -642,7 +642,38 @@ box-shadow:0 0 45px rgba(255,255,255,.9);
         transform: scale(1.08);
         filter: drop-shadow(0 0 25px rgba(255,215,0,1));
     }
-} 
+}
+  #promisePopup{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:500px;
+    background:rgba(20,20,40,.95);
+    color:white;
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    z-index:10001;
+    box-shadow:0 0 35px rgba(255,105,180,.6);
+}
+
+#promisePopup button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff5fa2;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.ring{
+    cursor:pointer;
+  }
 </style>
 
 </head>
@@ -1052,6 +1083,14 @@ setInterval(function () {
     }
 
 }, 1000);
+function showPromise() {
+    document.getElementById("promisePopup").style.display = "block";
+}
+
+function closePromise() {
+    document.getElementById("promisePopup").style.display = "none";
+}
+
 </script>
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
@@ -1145,8 +1184,28 @@ Eslam ❤️
 
 </p>
   
-<div class="ring">
+<div class="ring" onclick="showPromise()">
 💍
+</div>
+
+<div id="promisePopup">
+    <h2>💍 My Promise To You</h2>
+
+    <p>
+        One day, this won't be just an emoji.
+        It'll be the ring I place on your finger.
+
+        Until then...
+
+        I promise to love you,
+        protect your heart,
+        stand beside you,
+        and choose you every single day.
+
+        ❤️ I love you, Heda. ❤️
+    </p>
+
+    <button onclick="closePromise()">Close ❤️</button>
 </div>
 
 </div>
