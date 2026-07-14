@@ -688,6 +688,33 @@ max-height:90vh;
 #wishMessage{
     animation: fadeUp 1s ease;
   }
+  .certificate{
+    text-align:center;
+    padding:90px 20px;
+}
+
+.certificate-card{
+    max-width:700px;
+    margin:auto;
+    padding:40px;
+    border:4px solid #ff7eb9;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 35px rgba(255,105,180,.5);
+}
+
+.certificate h1{
+    color:#ff8ac6;
+    margin:20px 0;
+}
+
+.signature{
+    margin-top:35px;
+    font-size:24px;
+    color:#ffd6ea;
+    font-style:italic;
+} 
 </style>
 
 </head>
@@ -1107,7 +1134,7 @@ function closePromise() {
     document.getElementById("countdown").style.display = "block";
   }
   function blowCandles() {
-    document.getElementById("cake").innerHTML = "🎂✨";
+    document.getElementById("cake").innerHTML = "🎂";
     document.getElementById("wishMessage").style.display = "block";
     document.getElementById("wishButton").style.display = "none";
 
@@ -1253,6 +1280,40 @@ Eslam ❤️
 
 
   
+  </section>
+  <section class="certificate">
+    <h2>📜 Certificate of Endless Love</h2>
+
+    <div class="certificate-card">
+        <h3>Certificate of Love ❤️</h3>
+
+        <p>
+            This certifies that
+        </p>
+
+        <h1>Heda</h1>
+
+        <p>
+            will forever have a special place in
+        </p>
+
+        <h1>Eslam's Heart ❤️</h1>
+
+        <p>
+            Valid from:
+            <strong>August 3, 2026</strong>
+        </p>
+
+        <p>
+            No expiration date.<br>
+            Forever and always. ❤️
+        </p>
+
+        <div class="signature">
+            Signed,<br>
+            Eslam ❤️
+        </div>
+    </div>
   </section>
   <section class="future">
     <h2>🌙 Our Future</h2>
