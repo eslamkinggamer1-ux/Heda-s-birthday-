@@ -792,6 +792,46 @@ max-height:90vh;
         transform:translate(-500px,500px) rotate(45deg);
         opacity:0;
     }
+}
+  .lily-garden {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.lily-garden h2 {
+    font-size: 35px;
+    color: white;
+    text-shadow: 0 0 15px white;
+}
+
+.lilies span {
+    display: inline-block;
+    font-size: 70px;
+    cursor: pointer;
+    margin: 15px;
+    filter: drop-shadow(0 0 15px white);
+    animation: lilyFloat 3s ease-in-out infinite;
+    transition: 0.5s;
+}
+
+.lilies span:hover {
+    transform: scale(1.3);
+}
+
+@keyframes lilyFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+#lilyMessage {
+    margin-top: 30px;
+    font-size: 24px;
+    color: white;
 } 
 </style>
 
@@ -1291,6 +1331,20 @@ window.onload = function () {
 }
 
 setInterval(createShootingStar, 3500);
+  const lilyMessages = [
+    "Your smile is my favorite thing ❤️",
+    "Your kindness makes you special 🤍",
+    "You make my days brighter ✨",
+    "I am grateful that I met you 💕",
+    "Happy Birthday Heda, my beautiful lily 🤍"
+];
+
+function showLily(index){
+
+    document.getElementById("lilyMessage").innerHTML =
+    lilyMessages[index];
+
+  }
 </script>
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
@@ -1479,6 +1533,21 @@ Eslam ❤️
         I hope your smile never fades.<br><br>
         I love you forever. ❤️
     </h2>
+  </section>
+  <section class="lily-garden">
+    <h2>🤍 A Garden For Heda 🤍</h2>
+
+    <p>Flowers that bloom with all the things I love about you ❤️</p>
+
+    <div class="lilies">
+        <span onclick="showLily(0)">🤍</span>
+        <span onclick="showLily(1)">🤍</span>
+        <span onclick="showLily(2)">🤍</span>
+        <span onclick="showLily(3)">🤍</span>
+        <span onclick="showLily(4)">🤍</span>
+    </div>
+
+    <p id="lilyMessage"></p>
   </section>
   </body>
 </html>
