@@ -771,6 +771,28 @@ max-height:90vh;
     margin:20px 0;
     font-style:italic;
   }
+  .shooting-star{
+    position:fixed;
+    top:-10px;
+    width:2px;
+    height:100px;
+    background:linear-gradient(white, transparent);
+    transform:rotate(45deg);
+    pointer-events:none;
+    z-index:1;
+    animation:shoot 2s linear forwards;
+}
+
+@keyframes shoot{
+    from{
+        transform:translate(0,0) rotate(45deg);
+        opacity:1;
+    }
+    to{
+        transform:translate(-500px,500px) rotate(45deg);
+        opacity:0;
+    }
+} 
 </style>
 
 </head>
@@ -1254,6 +1276,21 @@ function typeWriter() {
 window.onload = function () {
     typeWriter();
 };
+  function createShootingStar() {
+    const star = document.createElement("div");
+    star.className = "shooting-star";
+
+    star.style.left = Math.random() * window.innerWidth + "px";
+    star.style.top = Math.random() * 200 + "px";
+
+    document.body.appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, 2000);
+}
+
+setInterval(createShootingStar, 3500);
 </script>
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
