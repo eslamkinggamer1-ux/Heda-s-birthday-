@@ -834,6 +834,44 @@ max-height:90vh;
     margin-top: 30px;
     font-size: 24px;
     color: white;
+}
+  .gift-section{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.gift-box{
+    font-size:90px;
+    cursor:pointer;
+    display:inline-block;
+    transition:.4s;
+    animation:giftShake 2s infinite;
+}
+
+.gift-box:hover{
+    transform:scale(1.15);
+}
+
+#giftMessage{
+    margin-top:30px;
+    animation:fadeGift .8s ease;
+}
+
+@keyframes giftShake{
+    0%,100%{transform:rotate(0deg);}
+    25%{transform:rotate(-8deg);}
+    75%{transform:rotate(8deg);}
+}
+
+@keyframes fadeGift{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 } 
 </style>
 
@@ -1346,6 +1384,39 @@ function showLily(index){
     document.getElementById("lilyMessage").innerHTML =
     lilyMessages[index];
 
+  }
+  function openGift() {
+    const box = document.querySelector(".gift-box");
+    const message = document.getElementById("giftMessage");
+
+    box.innerHTML = "🎉";
+    box.style.transform = "scale(1.2) rotate(15deg)";
+    box.style.animation = "none";
+
+    message.style.display = "block";
+
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("span");
+
+        heart.innerHTML = "❤️";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = "-20px";
+        heart.style.fontSize = (20 + Math.random() * 20) + "px";
+        heart.style.pointerEvents = "none";
+        heart.style.transition = "transform 3s linear, opacity 3s linear";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.style.transform = "translateY(110vh)";
+            heart.style.opacity = "0";
+        }, 50);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
   }
 </script>
 <section class="final-love">
