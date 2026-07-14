@@ -676,6 +676,18 @@ max-height:90vh;
 .ring{
     cursor:pointer;
   }
+  #birthdayWish{
+    text-align:center;
+}
+
+#wishButton{
+    margin-top:20px;
+    animation: heartbeat 1.5s infinite;
+}
+
+#wishMessage{
+    animation: fadeUp 1s ease;
+  }
 </style>
 
 </head>
@@ -1094,6 +1106,32 @@ function closePromise() {
     document.getElementById("promisePopup").style.display = "none";
     document.getElementById("countdown").style.display = "block";
   }
+  function blowCandles() {
+    document.getElementById("cake").innerHTML = "🎂✨";
+    document.getElementById("wishMessage").style.display = "block";
+    document.getElementById("wishButton").style.display = "none";
+
+    for (let i = 0; i < 25; i++) {
+        const heart = document.createElement("span");
+        heart.innerHTML = "🎉";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.top = "-30px";
+        heart.style.fontSize = (20 + Math.random() * 20) + "px";
+        heart.style.pointerEvents = "none";
+        heart.style.transition = "transform 4s linear, opacity 4s linear";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.style.transform = "translateY(110vh)";
+            heart.style.opacity = "0";
+        }, 50);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+    }
+  }
 </script>
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
@@ -1230,6 +1268,24 @@ Eslam ❤️
         Until that day comes...
         I'll keep loving you with all my heart. ❤️
     </p>
+  </section>
+  <section id="birthdayWish" style="text-align:center; padding:100px 20px;">
+    <h2>🎂 One Last Wish...</h2>
+
+    <div id="cake" style="font-size:90px; margin:30px 0;">
+        🎂
+    </div>
+
+    <button onclick="blowCandles()" id="wishButton">
+        🕯️ Blow Out The Candles
+    </button>
+
+    <h2 id="wishMessage" style="display:none; margin-top:40px;">
+        🎉 Happy Birthday, Heda! ❤️<br><br>
+        May every wish you make come true.<br>
+        I hope your smile never fades.<br><br>
+        I love you forever. ❤️
+    </h2>
   </section>
   </body>
 </html>
