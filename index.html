@@ -934,7 +934,37 @@ font-weight:bold;
 margin-top:15px;
 line-height:1.8;
 font-size:18px;
-} 
+}
+  #fireworksMessage{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:48px;
+    font-weight:bold;
+    color:white;
+    text-shadow:0 0 20px hotpink;
+    display:none;
+    z-index:9999;
+    animation:fadeFireworks 6s ease;
+}
+
+.firework{
+    position:fixed;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:gold;
+    pointer-events:none;
+    z-index:9998;
+}
+
+@keyframes fadeFireworks{
+    0%{opacity:0;}
+    15%{opacity:1;}
+    85%{opacity:1;}
+    100%{opacity:0;}
+  }
 </style>
 
 </head>
@@ -1495,6 +1525,54 @@ const random = Math.floor(Math.random() * wishes.length);
 document.getElementById("starWish").innerHTML = wishes[random];
   }
 </script>
+  function launchFireworks() {
+    document.getElementById("fireworksMessage").style.display = "block";
+
+    for(let i = 0; i < 80; i++){
+
+        const fw = document.createElement("div");
+        fw.className = "firework";
+
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight * 0.6;
+
+        fw.style.left = x + "px";
+        fw.style.top = y + "px";
+
+        fw.style.background =
+            `hsl(${Math.random()*360},100%,60%)`;
+
+        document.body.appendChild(fw);
+
+        const dx = (Math.random()-0.5)*250;
+        const dy = (Math.random()-0.5)*250;
+
+        fw.animate([
+            {transform:"translate(0,0)",opacity:1},
+            {transform:`translate(${dx}px,${dy}px)`,opacity:0}
+        ],{
+            duration:1200,
+            easing:"ease-out"
+        });
+
+        setTimeout(()=>fw.remove(),1200);
+    }
+
+    setTimeout(()=>{
+        document.getElementById("fireworksMessage").style.display="none";
+    },6000);
+}
+
+let fireworksPlayed = false;
+
+window.addEventListener("scroll", () => {
+    if (fireworksPlayed) return;
+
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+        fireworksPlayed = true;
+        launchFireworks();
+    }
+});
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
 
@@ -1757,5 +1835,8 @@ Thank you for making my life brighter. I hope this book keeps growing with count
 
 </div>
   </section>
+  <div id="fireworksMessage">
+    🎉 Happy Birthday, Heda! ❤️
+  </div>
   </body>
 </html>
