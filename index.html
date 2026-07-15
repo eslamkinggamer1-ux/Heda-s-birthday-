@@ -900,6 +900,40 @@ to{
 transform:scale(1.15);
 filter:drop-shadow(0 0 25px gold);
 }
+}
+  .memory-book{
+padding:80px 20px;
+text-align:center;
+}
+
+.book{
+max-width:700px;
+margin:auto;
+}
+
+.book details{
+margin:18px 0;
+background:rgba(255,255,255,.08);
+border-radius:18px;
+padding:15px;
+transition:.3s;
+}
+
+.book details[open]{
+background:rgba(255,182,193,.15);
+box-shadow:0 0 20px rgba(255,182,193,.35);
+}
+
+.book summary{
+cursor:pointer;
+font-size:22px;
+font-weight:bold;
+}
+
+.book p{
+margin-top:15px;
+line-height:1.8;
+font-size:18px;
 } 
 </style>
 
@@ -1693,6 +1727,35 @@ Eslam ❤️
 </div>
 
 <p id="starWish"></p>
+  </section>
+  <section class="memory-book">
+<h2>📖 Our Memory Book</h2>
+
+<div class="book">
+
+<details>
+<summary>📄 Page 1</summary>
+<p>
+The first chapter of my favorite story began when I met you.
+</p>
+</details>
+
+<details>
+<summary>📄 Page 2</summary>
+<p>
+Every smile, every conversation, and every moment with you became another beautiful page.
+</p>
+</details>
+
+<details>
+<summary>📄 Page 3</summary>
+<p>
+Thank you for making my life brighter. I hope this book keeps growing with countless happy memories.
+❤️
+</p>
+</details>
+
+</div>
   </section>
   </body>
 </html>
