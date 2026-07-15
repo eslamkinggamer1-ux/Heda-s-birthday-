@@ -872,6 +872,34 @@ max-height:90vh;
         opacity:1;
         transform:translateY(0);
     }
+}
+  .star-wish{
+text-align:center;
+padding:80px 20px;
+}
+
+.wish-star{
+font-size:90px;
+cursor:pointer;
+animation:twinkle 1.5s infinite alternate;
+}
+
+#starWish{
+margin-top:25px;
+font-size:22px;
+color:#ffd6ea;
+font-style:italic;
+}
+
+@keyframes twinkle{
+from{
+transform:scale(1);
+filter:drop-shadow(0 0 8px gold);
+}
+to{
+transform:scale(1.15);
+filter:drop-shadow(0 0 25px gold);
+}
 } 
 </style>
 
@@ -1418,6 +1446,20 @@ function showLily(index){
         }, 3000);
     }
   }
+  const wishes = [
+"I wish we stay together forever. ❤️",
+"I wish every birthday is spent with you. 🎂",
+"I wish your smile never fades. 🌸",
+"I wish our dreams come true. ✨",
+"I wish I could hug you right now. 🤍",
+"I wish we'll make countless memories together. 💖",
+"You are my favorite wish that came true. ❤️"
+];
+
+function makeWish(){
+const random = Math.floor(Math.random() * wishes.length);
+document.getElementById("starWish").innerHTML = wishes[random];
+  }
 </script>
 <section class="final-love">
     <h2>Forever With You ❤️</h2>
@@ -1642,6 +1684,15 @@ Eslam ❤️
             I love you forever. ❤️
         </p>
     </div>
+  </section>
+  <section class="star-wish">
+<h2>⭐ Make A Wish</h2>
+
+<div class="wish-star" onclick="makeWish()">
+⭐
+</div>
+
+<p id="starWish"></p>
   </section>
   </body>
 </html>
